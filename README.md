@@ -1,4 +1,4 @@
-# app_pos_POO
+# Aplicacion Pos de materiales
 ----
 Aplicación Pos, que realiza un CRUD sobre una base de datos. 
 Para realizar dichas acciones se utilizo el ORM peewee.
@@ -6,7 +6,8 @@ El proyecto se desarrollo con el modelo MVC y con el paradigma de programación 
 Toda la documentacion del proyecto esta dentro de la carpeta docs. Fue desarrollado con "Sphinx"
 
 ----
-
+# Link de la documentacion del proyecto:
+## https://eliasescalante.github.io/Aplicacion_PosMateriales/
 ----
 
 preview
