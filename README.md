@@ -11,4 +11,5 @@ Toda la documentacion del proyecto esta dentro de la carpeta docs. Fue desarroll
 
 preview
 
-![Texto alternativo](https://github.com/eliasescalante/app_pos_POO/blob/main/img/Capture_app_nueva.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Aplicacion_PosMateriales/blob/main/img/1.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Aplicacion_PosMateriales/blob/main/img/Capture_app_nueva.JPG)
