@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>view module &mdash; documentación de Poss App - 0.01</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d7315b5f"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Poss App
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">view module</a><ul>
+<li><a class="reference internal" href="#view.POSApp"><code class="docutils literal notranslate"><span class="pre">POSApp</span></code></a><ul>
+<li><a class="reference internal" href="#view.POSApp.alta_registro"><code class="docutils literal notranslate"><span class="pre">POSApp.alta_registro()</span></code></a></li>
+<li><a class="reference internal" href="#view.POSApp.borrar_registro"><code class="docutils literal notranslate"><span class="pre">POSApp.borrar_registro()</span></code></a></li>
+<li><a class="reference internal" href="#view.POSApp.consultar_registro"><code class="docutils literal notranslate"><span class="pre">POSApp.consultar_registro()</span></code></a></li>
+<li><a class="reference internal" href="#view.POSApp.create_menu"><code class="docutils literal notranslate"><span class="pre">POSApp.create_menu()</span></code></a></li>
+<li><a class="reference internal" href="#view.POSApp.create_widgets"><code class="docutils literal notranslate"><span class="pre">POSApp.create_widgets()</span></code></a></li>
+<li><a class="reference internal" href="#view.POSApp.limpiar_tree"><code class="docutils literal notranslate"><span class="pre">POSApp.limpiar_tree()</span></code></a></li>
+<li><a class="reference internal" href="#view.POSApp.load_images"><code class="docutils literal notranslate"><span class="pre">POSApp.load_images()</span></code></a></li>
+<li><a class="reference internal" href="#view.POSApp.modificar_registro"><code class="docutils literal notranslate"><span class="pre">POSApp.modificar_registro()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Poss App</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">view module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/view.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-view">
+<span id="view-module"></span><h1>view module<a class="headerlink" href="#module-view" title="Link to this heading"></a></h1>
+<p>Clase que se encarga de la parte grafica de la aplicacion
+desarrollada con TKinter</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="view.POSApp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">view.</span></span><span class="sig-name descname"><span class="pre">POSApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raiz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Esta clase crea la interfaz gráfica de usuario para la aplicación
+Contiene los métodos y atributos que permiten interactuar con ella.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.alta_registro">
+<span class="sig-name descname"><span class="pre">alta_registro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.alta_registro" title="Link to this definition"></a></dt>
+<dd><p>Método para agregar un registro a la base de datos.
+Utilizo el metodo “alta_registro” de la clase “Controlador” le paso
+los argumentos obtenidos de lo entry</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.borrar_registro">
+<span class="sig-name descname"><span class="pre">borrar_registro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.borrar_registro" title="Link to this definition"></a></dt>
+<dd><p>Método para eleminar un registro de la base de datos.
+Utilizo el metodo “borrar_registro” de la clase “Controlador”.
+Paso por argumentos los valores obtenidos para borrar el registro
+que se selecciona del treeview.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.consultar_registro">
+<span class="sig-name descname"><span class="pre">consultar_registro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.consultar_registro" title="Link to this definition"></a></dt>
+<dd><p>Método que se encarga de buscar el registro del producto
+en base a los datos ingresados por el usuario.
+Obtengo los argumentos de los entry y los paso por parametros
+al método “consultar_registro” de la clase “Controlador”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.create_menu">
+<span class="sig-name descname"><span class="pre">create_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.create_menu" title="Link to this definition"></a></dt>
+<dd><p>Método para crear el menu de la app.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.create_widgets" title="Link to this definition"></a></dt>
+<dd><p>Método para crear los entry y los label  que se mostrara en pantalla.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.limpiar_tree">
+<span class="sig-name descname"><span class="pre">limpiar_tree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.limpiar_tree" title="Link to this definition"></a></dt>
+<dd><p>Método para limpiar los entry.
+Paso por argumento al metodo “limpiar_tree” de la clase “Controlador”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.load_images">
+<span class="sig-name descname"><span class="pre">load_images</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.load_images" title="Link to this definition"></a></dt>
+<dd><p>Método para cargary ubicar las imagenes en las etiquetas para mostrarlas en la app.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="view.POSApp.modificar_registro">
+<span class="sig-name descname"><span class="pre">modificar_registro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#view.POSApp.modificar_registro" title="Link to this definition"></a></dt>
+<dd><p>Método para modificar un registro de la base de datos.
+utilizo el metodo “modificar_registro” de la clase “Controlador”
+paso por argumento los datos obtenidos de los entry.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Elias Escalante.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

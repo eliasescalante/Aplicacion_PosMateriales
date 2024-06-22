@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>controller module &mdash; documentación de Poss App - 0.01</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d7315b5f"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Poss App
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">controller module</a><ul>
+<li><a class="reference internal" href="#controller.Controlador"><code class="docutils literal notranslate"><span class="pre">Controlador</span></code></a><ul>
+<li><a class="reference internal" href="#controller.Controlador.alta_registro"><code class="docutils literal notranslate"><span class="pre">Controlador.alta_registro()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.borrar_registro"><code class="docutils literal notranslate"><span class="pre">Controlador.borrar_registro()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.consultar_registro"><code class="docutils literal notranslate"><span class="pre">Controlador.consultar_registro()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.exportar_base"><code class="docutils literal notranslate"><span class="pre">Controlador.exportar_base()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.exportar_consulta"><code class="docutils literal notranslate"><span class="pre">Controlador.exportar_consulta()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.limpiar_tree"><code class="docutils literal notranslate"><span class="pre">Controlador.limpiar_tree()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.modificar_registro"><code class="docutils literal notranslate"><span class="pre">Controlador.modificar_registro()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.modo_clasico"><code class="docutils literal notranslate"><span class="pre">Controlador.modo_clasico()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.modo_oscuro"><code class="docutils literal notranslate"><span class="pre">Controlador.modo_oscuro()</span></code></a></li>
+<li><a class="reference internal" href="#controller.Controlador.mostrar_ayuda"><code class="docutils literal notranslate"><span class="pre">Controlador.mostrar_ayuda()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Poss App</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">controller module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/controller.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-controller">
+<span id="controller-module"></span><h1>controller module<a class="headerlink" href="#module-controller" title="Link to this heading"></a></h1>
+<p>Clase Controlador:
+Contiene todos los metodos que controlan la aplicación</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="controller.Controlador">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controller.</span></span><span class="sig-name descname"><span class="pre">Controlador</span></span><a class="headerlink" href="#controller.Controlador" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase Controlador:
+Contiene todos los metodos que controlan la aplicación</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.alta_registro">
+<span class="sig-name descname"><span class="pre">alta_registro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descripcion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precio_venta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precio_costo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proveedor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.alta_registro" title="Link to this definition"></a></dt>
+<dd><p>Funcion que realiza un alta de un registro en la base de datos
+recibe por parametros la informacion necesaria</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.borrar_registro">
+<span class="sig-name descname"><span class="pre">borrar_registro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.borrar_registro" title="Link to this definition"></a></dt>
+<dd><p>BORRA UN REGISTRO DE LA BASE DE DATOS.
+SE DEBE SELECCIONAR EL REGISTRO DESDE EL TREEVIEW Y LUEGO PRESIONAR EL BOTON BORRAR.
+ES NECESARIO REALIZAR UNA CONSULTA PRIMERO.
+EN CASO DE NO REALIZARLO EMITE UN MENSAJE DE WARNING</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.consultar_registro">
+<span class="sig-name descname"><span class="pre">consultar_registro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descripcion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.consultar_registro" title="Link to this definition"></a></dt>
+<dd><p>REALIZA UNA CONSULTA  A LA TABLA DE MATERIALES EN LA BASE
+DE DATOS PARA OBTENER TODOS LOS REGISTROS Y LOS AGREGA AL TREEVIEW
+SI NO SE COMPLETA LOS CAMPOS REQUERIDOS PARA REALIZAR LA CONSULTA
+EMITE UN MENSAJE EN UN SHOWWARNING PARA QUE SE COMPLETE ALGUN CRITERIO DE BUSQUEDA.
+EL CRITERIO DE BUSQUEDA VA A SER LA DESCRIPCION.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.exportar_base">
+<span class="sig-name descname"><span class="pre">exportar_base</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.exportar_base" title="Link to this definition"></a></dt>
+<dd><p>EXPORTA TODA LA BASE DE DATOS A UN ARCHIVO DE
+EXCEL Y DEJA ELEGIR DONDE GUARDARLO MEDIANTE UNA VENTANA EMERGENTE.
+IMPRIME EN CONSOLA LA ACCION SI SE EXPORTA CORRECTAMENTE
+ADEMAS DE MOSTRAR CON UN SHOWINFO UNA VENTANA EMERGENTE
+CON EL MISMO MENSAJE.
+EN CASO CONTRARIO SE CANCELA Y SE IMPRIME POR CONSOLA
+Y CON UN SHOWERROR PARA MOSTRAR EL MENSAJE DE CANCELACION.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.exportar_consulta">
+<span class="sig-name descname"><span class="pre">exportar_consulta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.exportar_consulta" title="Link to this definition"></a></dt>
+<dd><p>EXPORTA LA CONSULTA REALIZADA E IMPRESA EN EL TREEVIEW EN UN ARCHIVO .TXT
+MUESTRA EN UNA VENTANA EMERGENTE SI LA ACCION SI REALIZO CORRECTAMENTE.
+EN CASO QUE NO HAYA UNA CONSULTA REALIZADA PREVIAMENTE MUESTRA
+UN MENSAJE EN UN SHOWWARNING INDICANDO QUE NO HAY REGISTROS.
+SI SE CANCELA LA OPERACION TAMBIEN SE MUESTRA POR PANTALLA CON UN SHOWWARNING.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.limpiar_tree">
+<span class="sig-name descname"><span class="pre">limpiar_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.limpiar_tree" title="Link to this definition"></a></dt>
+<dd><p>LIMPIA EL TREEVIEWW DE TODA LA INFO QUE ESTE EN EL MOMENTO
+TAMBIEN LIMPIA LOS ENTRY DEL FORMULARIO</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.modificar_registro">
+<span class="sig-name descname"><span class="pre">modificar_registro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descripcion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precio_venta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precio_costo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proveedor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.modificar_registro" title="Link to this definition"></a></dt>
+<dd><p>MODIFICA UNO O VARIOS CAMPOS DE UN REGISTRO BASANDOSE EN EL NUMERO DE ID
+SE DEBE COMPLETAR LOS CAMPOS QUE SE QUIERAN MODIFICAR
+EMITE UN MENSAJE  SI NO SE HA SELECCIONADO NINGUN REGISTRO Y PARA MODIFICAR
+EMITE UN MENSAJE SI SE MODIFICO EL REGISTRO
+EMITE MENSAJE SI OCURRE UN ERROR DEL TIPO NO
+EXISTE EL REGISTRO O NO SE COMPLETO NINGUN CAMPO</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.modo_clasico">
+<span class="sig-name descname"><span class="pre">modo_clasico</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aplicacion</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.modo_clasico" title="Link to this definition"></a></dt>
+<dd><p>CAMBIA EL FONDO DE LA APLICACION A BLANCO QUE ES EL MODO ORIGINAL</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.modo_oscuro">
+<span class="sig-name descname"><span class="pre">modo_oscuro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aplicacion</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.modo_oscuro" title="Link to this definition"></a></dt>
+<dd><p>CAMBIA EL FONDO DE LA APLICACION A GRIS</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.Controlador.mostrar_ayuda">
+<span class="sig-name descname"><span class="pre">mostrar_ayuda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#controller.Controlador.mostrar_ayuda" title="Link to this definition"></a></dt>
+<dd><p>MUESTRA UN MENSAJE EN UNA VENTANA EMERGENTE CON LAS ISNTRUCCIONES Y DESCRIPCION DEL PROGRAMA</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Elias Escalante.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
