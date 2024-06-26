@@ -14,3 +14,14 @@ preview
 
 ![Texto alternativo](https://github.com/eliasescalante/Aplicacion_PosMateriales/blob/main/img/1.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/Aplicacion_PosMateriales/blob/main/img/Capture_app_nueva.JPG)
+
+----
+
+![GitHub repo size](https://img.shields.io/github/repo-size/eliasescalante/Aplicacion_PosMateriales
+)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/eliasescalante/Aplicacion_PosMateriales
+)
+![GitHub last commit](https://img.shields.io/github/last-commit/eliasescalante/Aplicacion_PosMateriales
+)
+
+----
