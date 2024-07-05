@@ -1,4 +1,4 @@
-# Aplicacion Pos de materiales
+# Aplicacion consulta de materiales (POSApp) 
 ----
 Aplicación Pos, que realiza un CRUD sobre una base de datos. 
 Para realizar dichas acciones se utilizo el ORM peewee.
