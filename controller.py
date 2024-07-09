@@ -8,7 +8,8 @@ from tkinter.messagebox import showerror
 import re
 import pandas as pd # me dice que no puede importarlo sin embargo si me toma la libreria
 import peewee
-from model import Producto
+from model import Producto, RegistroLog
+from decoradores import log_evento
 
 
 class Controlador:
@@ -16,6 +17,13 @@ class Controlador:
     Clase Controlador:
     Contiene todos los metodos que controlan la aplicación
     """
+    def obtener_registros_log(self):
+        """
+        Obtiene los registros del log
+        :return: Registros del log
+        """
+        registro = RegistroLog()
+        return registro.select()
 
     def limpiar_tree(self, arbol, entry_list):
         """
@@ -31,7 +39,7 @@ class Controlador:
         for entry in entry_list:
             entry.delete(0, END)
             print("limpiando entry")
-
+    @log_evento
     def exportar_base(self):
         """
         EXPORTA TODA LA BASE DE DATOS A UN ARCHIVO DE
@@ -104,7 +112,8 @@ class Controlador:
         GIT DEL PROYECTO: https://github.com/eliasescalante/app_pos_POO.git
         """
         messagebox.showinfo("Ayuda", mensaje)
-
+    
+    @log_evento
     def alta_registro(
         self, material, descripcion,
         precio_venta, precio_costo,
@@ -157,6 +166,7 @@ class Controlador:
             nuevo_registro.stock, nuevo_registro.proveedor)
             )
 
+    @log_evento
     def exportar_consulta(self, arbol):
         """
         EXPORTA LA CONSULTA REALIZADA E IMPRESA EN EL TREEVIEW EN UN ARCHIVO .TXT
@@ -193,6 +203,7 @@ class Controlador:
         else:
             messagebox.showwarning("Exportar consulta", "Operación cancelada.")
 
+    @log_evento
     def consultar_registro(self, descripcion, arbol, entry_list):
         """
         REALIZA UNA CONSULTA  A LA TABLA DE MATERIALES EN LA BASE 
@@ -225,13 +236,15 @@ class Controlador:
                 arbol.insert('', 'end', values=(
                     producto.id, producto.material, 
                     producto.descripcion, producto.precio_venta,
-                    producto.precio_costo, producto.stock, producto.proveedor)
+                    producto.precio_costo, producto.stock, producto.proveedor,
+                    producto)
                     )
         except peewee.DoesNotExist:
             messagebox.showerror("Error", "No hay registros con la descripción proporcionada.")
         except peewee.PeeweeException as e:
             messagebox.showerror("Error", f"Error al acceder a la base de datos: {e}")
-
+    
+    @log_evento
     def borrar_registro(self, arbol, entry_list):
         """
         BORRA UN REGISTRO DE LA BASE DE DATOS.
@@ -270,6 +283,7 @@ class Controlador:
         except peewee.PeeweeException as e:
             messagebox.showerror("Error", f"Error al acceder a la base de datos: {e}")
 
+    @log_evento
     def modificar_registro(
         self,
         arbol,

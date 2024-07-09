@@ -32,6 +32,20 @@ class Producto(BaseModel):
     def __str__(self):
         return f"Producto: {self.material} - Descripción: {self.descripcion} - Precio venta: ${self.precio_venta:.2f}"
 
+class RegistroLog(BaseModel):
+    """
+    Modelo de registro de log
+    que modela un registro de log con sus campos
+    """
+    id = AutoField()
+    fecha = CharField()
+    hora = CharField()
+    descripcion = CharField()
+    usuario = CharField()
+    accion = CharField()
+
+    def __str__(self):
+        return f"Fecha: {self.fecha} - Descripción: {self.descripcion}"
 
 class CrearBaseDatos():
     """
@@ -43,7 +57,7 @@ class CrearBaseDatos():
         Metodo para crear la base de datos
         """
         db.connect()
-        db.create_tables([Producto])
+        db.create_tables([Producto, RegistroLog])
     
     def __str__(self):
         return "realiza la conexion y crea la tabla"

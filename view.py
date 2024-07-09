@@ -4,7 +4,8 @@ desarrollada con TKinter
 """
 
 #from tkinter import *
-from tkinter import ttk, StringVar, Menu, Label, Entry, Button, W, S
+import tkinter as tk
+from tkinter import ttk, StringVar, Menu, Label, Entry, Button, W, S, Toplevel, Text
 from PIL import Image, ImageTk
 from controller import Controlador
 
@@ -169,19 +170,30 @@ class POSApp:
             )
         button5.place(x=600, y=200)
 
+        #boton ver registro
+        button6 = Button(
+            self.raiz, text="Ver registro",
+            width=button_width,
+            height=button_height,
+            background="white",
+            command=self.ver_registro
+            )
+        button6.place(x=900, y=50)
+
         # TREEVIEW
         self.tree = ttk.Treeview(self.raiz)
         self.tree['show'] = 'headings'
-        self.tree["columns"] = ("0", "1", "2", "3", "4", "5", "6")
+        self.tree["columns"] = ("0", "1", "2", "3", "4", "5", "6", "7")
 
         # Columnas del Treeview
-        self.tree.column("0", width=50, anchor=W)
-        self.tree.column("1", width=150, minwidth=150)
+        self.tree.column("0", width=5, anchor=W)
+        self.tree.column("1", width=100, minwidth=60)
         self.tree.column("2", width=150, minwidth=150)
-        self.tree.column("3", width=150, minwidth=150)
-        self.tree.column("4", width=150, minwidth=150)
-        self.tree.column("5", width=150, minwidth=150)
-        self.tree.column("6", width=150, minwidth=150)
+        self.tree.column("3", width=50, minwidth=50)
+        self.tree.column("4", width=50, minwidth=50)
+        self.tree.column("5", width=50, minwidth=50)
+        self.tree.column("6", width=100, minwidth=100)
+        self.tree.column("7", width=500, minwidth=500)
 
         # Encabezados de las columnas del Treeview
         self.tree.heading("0", text="ID")
@@ -191,7 +203,8 @@ class POSApp:
         self.tree.heading("4", text="PRECIO DE COSTO", anchor=W)
         self.tree.heading("5", text="STOCK", anchor=W)
         self.tree.heading("6", text="PROVEEDOR", anchor=W)
-        self.tree.place(relx=0.5, y=480, anchor=S, relwidth=1)
+        self.tree.heading("7", text="OBJETO", anchor=W)
+        self.tree.place(relx=0.5,anchor=S,y=480)
 
         # Cargar imágenes
         self.load_images()
@@ -291,5 +304,65 @@ class POSApp:
             [self.entry1, self.entry2, self.entry3, self.entry4, self.entry5, self.entry6]
             )
 
+    def ver_registro(self):
+        # Método para manejar el evento del botón "Ver registro"
+        # Obtener registros de RegistroLog desde el controlador
+        registros = self.funciones.obtener_registros_log()
+
+        # Crear una nueva ventana para mostrar los registros de RegistroLog
+        ventana_log = Toplevel(self.raiz)
+        ventana_log.title("Registro de Log")
+
+        # Frame para los registros
+        frame = ttk.Frame(ventana_log)
+        frame.pack(padx=10, pady=10)
+
+        # Etiqueta para el título
+        label_titulo = ttk.Label(frame, text="Registros de Log", font=("bold", 14))
+        label_titulo.pack()
+
+        # Widget de texto para mostrar los registros
+        texto_log = Text(frame, height=20, width=80)
+        texto_log.pack(padx=10, pady=10)
+
+        # Mostrar cada registro en el widget de texto
+        for registro in registros:
+            texto_log.insert(tk.END, f"Fecha: {registro.fecha} - Hora: {registro.hora}\n")
+            texto_log.insert(tk.END, f"Descripción: {registro.descripcion}\n\n")
+
     def __str__(self):
-        pass
+        return "Esta clase maneja la interfaz grafica de la aplicacion"
+
+
+class RegistroLogWindows():
+    """
+    Clase que maneja la interfaz gráfica de la ventana de registro de log.
+    """
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Registro de Log")
+        self.master.geometry("800x600")
+
+        self.create_widgets()
+
+    def create_widgets(self):
+        # Frame para los registros
+        frame = ttk.Frame(self.master)
+        frame.pack(padx=10, pady=10)
+
+        # Etiqueta para el título
+        label_titulo = ttk.Label(frame, text="Registros de Log", font=("bold", 14))
+        label_titulo.pack()
+
+        # Widget de texto para mostrar los registros
+        texto_log = Text(frame, height=20, width=80)
+        texto_log.pack(padx=10, pady=10)
+
+        # Mostrar los registros de RegistroLog en el widget de texto
+        registros = Controlador().obtener_registros_log()
+        for registro in registros:
+            texto_log.insert(tk.END, f"Fecha: {registro.fecha} - Hora: {registro.hora}\n")
+            texto_log.insert(tk.END, f"Descripción: {registro.descripcion}\n\n")
+
+    def __str__(self):
+        return "Clase que maneja la interfaz gráfica de la ventana de registro de log"
