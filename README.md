@@ -1,15 +1,27 @@
-# app_pos_POO
+# Aplicacion consulta de materiales (POSApp) 
 ----
 Aplicación Pos, que realiza un CRUD sobre una base de datos. 
 Para realizar dichas acciones se utilizo el ORM peewee.
 El proyecto se desarrollo con el modelo MVC y con el paradigma de programación orientada a Objetos con Python 3.
-Toda la documentacion del proyecto esta dentro de la carpeta docs. Fue desarrollado con "Sphinx"
+Toda la documentacion del proyecto esta dentro de la carpeta docs y fue armado con "Sphinx"
 
 ----
-
+# Link de la documentacion del proyecto:
+## https://eliasescalante.github.io/Aplicacion_PosMateriales/
 ----
 
 preview
 
 ![Texto alternativo](https://github.com/eliasescalante/Aplicacion_PosMateriales/blob/main/img/1.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/Aplicacion_PosMateriales/blob/main/img/Capture_app_nueva.JPG)
+
+----
+
+![GitHub repo size](https://img.shields.io/github/repo-size/eliasescalante/Aplicacion_PosMateriales
+)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/eliasescalante/Aplicacion_PosMateriales
+)
+![GitHub last commit](https://img.shields.io/github/last-commit/eliasescalante/Aplicacion_PosMateriales
+)
+
+----
